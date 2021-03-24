@@ -247,8 +247,6 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     height: 400px;
-    margin-top: -58px;
-
 }
 
 .description-length-toggle{

@@ -275,13 +275,13 @@ export default {
 }
 @media (max-width: 760px){
     .results.cover {
-        grid-template-columns: repeat(auto-fill,minmax(105px,1fr));
+        grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
         grid-gap: 25px 20px;
     }
 }
-@media (max-width: 400px){
+@media (max-width: 450px){
     .results.cover {
-        grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
+        grid-template-columns: repeat(auto-fill,minmax(95px,1fr));
         grid-gap: 20px 12px;
         padding: 0 10px;
     }

@@ -43,19 +43,19 @@ export const state = () => ({
       text: 'аниме',
       svg: 'fas fa-play',
       auth: 'nd'
-    }
+    },
     // {
     //   to: 'Mangas',
     //   text: 'манга',
     //   svg: 'fas fa-book',
     //   auth: 'nd'
     // },
-    // {
-    //   to: 'Calendar',
-    //   text: 'Календарь',
-    //   svg: 'far fa-calendar-alt',
-    //   auth: 'nd'
-    // },
+    {
+      to: '/calendar',
+      text: 'Календарь',
+      svg: 'far fa-calendar-alt',
+      auth: 'nd'
+    }
     // {
     //   to: 'Login',
     //   text: 'войти',

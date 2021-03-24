@@ -85,7 +85,6 @@ export default {
 <style>
 .slick-slider{
     margin-bottom: 60px;
-    margin-top: -58px;
 }
 button.slick-arrow.slick-prev{
     position: absolute;

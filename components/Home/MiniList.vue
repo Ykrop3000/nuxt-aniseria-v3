@@ -1,5 +1,4 @@
 <template>
-  <render-on-scroll>
     <div class="landing-section">
       <NuxtLink :to="{name: 'animes', query:filter.filter}" class="title link">
         <h3 v-text="sectionName" />
@@ -19,17 +18,14 @@
         />
       </div>
     </div>
-  </render-on-scroll>
 </template>
 <script>
 
 import MediaCard from '@/components/MediaCard'
-import RenderOnScroll from 'nuxt-render-on-scroll'
 
 export default {
   components: {
     MediaCard,
-    RenderOnScroll
   },
 
   props: {

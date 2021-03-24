@@ -1,8 +1,8 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{'pt0':transparent}">
     <client-only>
       <Header v-show="$vssWidth >= 1040" :transparent="transparent" :is-logged-in="false" />
-      <MobileNav v-show="$vssWidth < 1040" />
+      <MobileNav v-show="$vssWidth < 1040" :dark="theme === 'dark'" />
     </client-only>
     <div ref="content" class="page-content" @click="linkRouter">
       <Nuxt />
@@ -73,5 +73,7 @@ export default {
 </script>
 
 <style>
-
+  .pt0{
+    padding-top: 0 !important;
+  }
 </style>

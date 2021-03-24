@@ -63,13 +63,12 @@ export default {
     width: 110vw;
     height: 100%;
 }
-.search-landing .landing-section:nth-child(2n) .landing-section {
+.search-landing .landing-section:nth-child(2n) {
     padding: 15px 0;
-}
-
-.search-landing .landing-section:nth-child(2n){
+    position: relative;
     margin-bottom: 30px;
 }
+
 @media (max-width: 1040px){
     .search-landing .landing-section:nth-child(2n)::after{
         right: 0;

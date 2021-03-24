@@ -13,7 +13,8 @@ export default {
     link: [
       { rel: 'icon', sizes:'32x32', type: 'image/x-icon', href: '/icon_32x32.png' },
       { rel: 'icon', sizes:'16x16', type: 'image/x-icon', href: '/icon_16x16.png' },
-      { rel: 'stylesheet',  href: '//fonts.googleapis.com/css?family=Roboto:300,400,500,700,900'}
+      { rel: 'stylesheet',  href: '//fonts.googleapis.com/css?family=Roboto:300,400,500,700,900'},
+      { rel: 'canonical',  href: 'https://aniseria.ru/animes'}
     ],
     script: [
       { src: 'https://kit.fontawesome.com/866e703862.js', crossorigin:'anonymous'}
@@ -56,6 +57,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/apollo',
     '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
     'nuxt-lazy-load'
   ],
   axios: {
@@ -72,6 +74,11 @@ export default {
   sitemap: {
     hostname: 'https://aniseria.ru',
     gzip: true,
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date()
+    }
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -90,5 +97,6 @@ export default {
     name: 'circle',
     color: '#29a6ff',
     background: '#29a6ff'
-  }
+  },
+
 }

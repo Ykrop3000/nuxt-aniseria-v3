@@ -58,7 +58,8 @@ export default {
     '@nuxtjs/apollo',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
-    'nuxt-lazy-load'
+    'nuxt-lazy-load',
+    '@nuxtjs/yandex-metrika'
   ],
   axios: {
     baseURL: 'https://shikimori.one',
@@ -98,5 +99,12 @@ export default {
     color: '#29a6ff',
     background: '#29a6ff'
   },
-
+  yandexMetrika: {
+    id: '74589367',
+    webvisor: true,
+    clickmap: true,
+    // useCDN:false,
+     trackLinks: true,
+     accurateTrackBounce: true
+  },
 }

@@ -91,9 +91,7 @@ export default {
     height:' 4px',
 
   },
-  server: {
 
-  },
   loadingIndicator: {
     name: 'circle',
     color: '#29a6ff',
@@ -107,4 +105,9 @@ export default {
      trackLinks: true,
      accurateTrackBounce: true
   },
+  robots: {
+    UserAgent: '*',
+    Disallow: '/',
+    Sitemap: 'https://aniseria.ru/animes.xml'
+  }
 }

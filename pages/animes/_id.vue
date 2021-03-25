@@ -49,9 +49,9 @@
               <NuxtLink v-if="!anime.anons && $attrs.type != 'mangas'" no-prefetch :to="{name:'animes-id-charapters',params:{id:$route.params.id}}" replace class="link">
                 Персонажи
               </NuxtLink>
-              <!-- <router-link v-if="!anime.anons && $attrs.type != 'mangas'" :to="{ name: 'Frames'}" replace class="link">
+              <NuxtLink v-if="!anime.anons && $attrs.type != 'mangas'" no-prefetch :to="{name:'animes-id-frames',params:{id:$route.params.id}}" replace class="link">
                 Кадры
-              </router-link> -->
+              </NuxtLink>
             </div>
           </div>
         </div>

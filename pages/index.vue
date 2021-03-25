@@ -54,7 +54,7 @@ export default {
     margin-top: -30px;
     position: relative;
 }
-.search-landing .landing-section:nth-child(2n)::after{
+/* .search-landing .landing-section:nth-child(2n)::after{
     content: '';
     background-color: rgb(var(--color-background-100));
     position: absolute;
@@ -73,7 +73,7 @@ export default {
     .search-landing .landing-section:nth-child(2n)::after{
         right: 0;
     }
-}
+} */
 </style>
 <style scoped>
 

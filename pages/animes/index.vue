@@ -182,19 +182,7 @@ export default {
 </style>
 
 <style>
-.results {
-    display: grid;
-    width: 100%;
-    grid-gap: 28px 30px;
-    grid-template-columns: repeat(auto-fill,185px);
-    justify-content: space-between;
-    z-index: 5;
-    position: relative;
-}
-.results.chart {
-    grid-template-columns: repeat(3,minmax(390px,460px));
-    grid-template-rows: repeat(auto-fill,265px);
-}
+
 .alias-title{
     font-size: 2.8rem;
     color: rgb(var(--color-gray-800));
@@ -220,41 +208,7 @@ export default {
     text-align: center;
     font-size: 1.8rem;
 }
-@media (max-width: 1540px){
-    .results.cover  {
-        grid-gap: 25px 20px;
-    }
-    .results.chart {
-        grid-gap: 28px 30px;
-        grid-template-columns: repeat(2,minmax(390px,760px));
-    }
-}
-@media (max-width: 1065px){
-    .results.cover {
-        grid-gap: 25px 14px;
-    }
-    .results.chart {
-        grid-gap: 25px 10px;
-    }
-}
-@media (max-width: 1040px){
-    .results.cover {
-        padding: 0 20px;
-        grid-template-columns: repeat(auto-fill,minmax(125px,1fr));
-        grid-gap: 25px 20px;
-        justify-content: center;
-    }
-    .results {
-        padding: 0 20px;
-        padding-top: 0px;
-        padding-right: 20px;
-        padding-bottom: 0px;
-        padding-left: 20px;
-        grid-template-columns: repeat(auto-fill,minmax(125px,1fr));
-        grid-gap: 25px 20px;
-        justify-content: center;
-    }
-}
+
 .label {
     color: rgb(var(--color-gray-600));
     font-size: 1.3rem;
@@ -267,28 +221,4 @@ export default {
     font-size: 1.8rem;
 }
 
-@media (max-width: 800px){
-    .results.chart {
-        grid-template-columns: minmax(390px,760px);
-        grid-gap: 25px 20px;
-    }
-}
-@media (max-width: 760px){
-    .results.cover {
-        grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
-        grid-gap: 25px 20px;
-    }
-}
-@media (max-width: 450px){
-    .results.cover {
-        grid-template-columns: repeat(auto-fill,minmax(95px,1fr));
-        grid-gap: 20px 12px;
-        padding: 0 10px;
-    }
-   .results.chart {
-        grid-template-columns: 1fr;
-        grid-gap: 20px 0;
-        padding: 0 10px;
-    }
-}
 </style>

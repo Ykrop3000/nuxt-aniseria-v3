@@ -11,7 +11,7 @@ export default {
       { hid: 'description', name: 'description', content: 'Смотреть аниме онлайн бесплатно. Большая база лучших аниме с русской озвучкой в хорошем качестве.' }
     ],
     link: [
-      { rel: 'shortcut icon', sizes:'32x32', type: 'image/x-icon', href: '/icon_32x32.png' },
+      { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'icon', sizes:'32x32', type: 'image/x-icon', href: '/icon_32x32.png' },
       { rel: 'icon', sizes:'16x16', type: 'image/x-icon', href: '/icon_16x16.png' },
       { rel: 'stylesheet',  href: '//fonts.googleapis.com/css?family=Roboto:300,400,500,700,900'},

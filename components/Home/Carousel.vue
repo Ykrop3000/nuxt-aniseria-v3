@@ -18,6 +18,7 @@
     <NuxtLink
       v-for="(i,id) in animes.filter(e => !e.dis)"
       :key="id"
+      no-prefetch
       class="slide container"
       :to="i.url"
     >

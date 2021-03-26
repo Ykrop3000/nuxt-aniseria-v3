@@ -16,7 +16,7 @@
         <div class="body container">
           <div />
           <div class="description-wrap">
-            <div ref="description" class="markdown description" :class="{'expandable':expandable}" v-html="charapter.description_html" />
+            <div ref="description" class="markdown description" :class="{'expandable':expandable}" v-html="charapter.description_html.replace('https://shikimori.one','')" />
             <div v-if="height==300" class="description-length-toggle" @click="expandable = !expandable">
               Читать Больше
             </div>
@@ -48,7 +48,16 @@ export default {
     await store.dispatch('charapter/fetchCharapter', params.id)
     store.commit('setTransparent', false)
   },
-
+  head () {
+    return {
+      title: `${this.charapter.russian} | AniSeria`,
+      meta: [{
+        hid: 'description',
+        name: 'description',
+        content: this.charapter.description
+      }]
+    }
+  },
   computed: {
     charapter () { return this.$store.getters['charapter/getCharapter'] },
     shikiUrl () { return this.$store.getters.getShikiUrl },

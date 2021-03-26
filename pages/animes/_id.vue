@@ -37,7 +37,7 @@
           </div>
           <div class="content">
             <h1 v-text="anime.russian" />
-            <p v-if="anime.description_html" class="description" :class="{'full': des}" v-html="anime.description_html" />
+            <p v-if="anime.description_html" class="description" :class="{'full': des}" v-html="anime.description_html.replace('https://shikimori.one','')" />
 
             <div class="nav">
               <NuxtLink no-prefetch :to="{name:'animes-id',params:{id:$route.params.id}}" replace class="link">
@@ -112,7 +112,7 @@ export default {
   },
   head () {
     return {
-      title: `${this.anime.russian} / ${this.anime.name} - AniSeria`,
+      title: `${this.anime.russian} / ${this.anime.name} | AniSeria`,
       meta: [{
         hid: 'description',
         name: 'description',
@@ -367,7 +367,7 @@ export default {
 .nav{
     align-self: end;
     display: flex;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     justify-content: space-evenly;
     justify-self: center;
     max-width: 800px;

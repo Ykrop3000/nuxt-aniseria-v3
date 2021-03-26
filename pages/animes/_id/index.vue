@@ -2,7 +2,7 @@
   <div class="overview">
     <div v-if="anime.description" class="description-wrap">
       <h2>Описание</h2>
-      <div class="description content-wrap" v-html="anime.description_html" />
+      <div class="description content-wrap" v-html="anime.description_html.replace('https://shikimori.one','')" />
     </div>
     <render-on-scroll>
       <Related v-if="related" :width="$vssWidth" :related="related" :class="{'small':$vssWidth>=1040}" :type="type" />

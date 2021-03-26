@@ -245,7 +245,9 @@ h1 {
   }
 }
 
-
+ .nav a.nuxt-link-exact-active{
+  color: rgb(var(--color-blue)) !important;
+}
 .container {
   margin: 0 auto;
   min-width: 320px;

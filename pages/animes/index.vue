@@ -65,6 +65,11 @@ export default {
     }
     await store.dispatch('animes/fetchAnimes', params)
   },
+  head () {
+    return {
+      title: 'Список аниме | AniSeria'
+    }
+  },
   computed: {
     animes () {
       if (this.$store.getters['animes/getAnimes'].length !== 0) {
@@ -125,6 +130,7 @@ export default {
         this.get_animes(true)
       }
     }
+
   }
 }
 </script>

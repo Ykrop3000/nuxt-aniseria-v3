@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Список Аниме смотреть онлайн. Лучшие мультики и аниме мультфильмы в хорошем качестве бесплатно - AniSeria',
+    title: 'Список Аниме смотреть онлайн. Лучшие мультики и аниме мультфильмы в хорошем качестве бесплатно | AniSeria',
     htmlAttrs: {
       lang: 'ru'
     },
@@ -57,7 +57,7 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/apollo',
-    '@nuxtjs/sitemap',
+    // '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     'nuxt-lazy-load',
     '@nuxtjs/yandex-metrika'
@@ -71,15 +71,6 @@ export default {
       default: {
         httpEndpoint: 'https://graphql.anilist.co',
       }
-    }
-  },
-  sitemap: {
-    hostname: 'https://aniseria.ru',
-    gzip: true,
-    defaults: {
-      changefreq: 'daily',
-      priority: 1,
-      lastmod: new Date()
     }
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -108,7 +99,7 @@ export default {
   },
   robots: {
     UserAgent: '*',
-    Disallow: '/',
-    Sitemap: 'https://aniseria.ru/animes.xml'
+    Allow: '/',
+    Sitemap: 'https://aniseria.ru/sitemap.xml'
   }
 }

@@ -57,15 +57,7 @@ export default {
         return this.$route.query.player || 'kodik'
       },
       set (val) {
-        let prevparams = this.$route.query
-
-        if (prevparams.player) {
-          prevparams.player = val
-        } else {
-          prevparams = Object.assign({ player: val }, prevparams)
-        }
-        this.$router.replace({ query: {} })
-        this.$router.replace({ query: prevparams })
+        this.$router.replace({ query: { player: val } })
 
         return val
       }

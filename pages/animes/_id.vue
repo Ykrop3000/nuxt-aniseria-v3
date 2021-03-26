@@ -157,7 +157,6 @@ export default {
     Init () {
       this.$store.commit('setTransparent', true)
       if (this.anime.id) {
-        this.setTitle()
         this.$store.dispatch('anime/fetchBanner', this.anime.english[0] || this.anime.japanese[0])
         this.$store.dispatch('anime/fetchKodik', this.anime.id)
       }
@@ -168,11 +167,6 @@ export default {
       // } else {
       //   this.$message.error('Для этого действия тебе необходима регистрация на сайте.')
       // }
-    },
-    setTitle () {
-      if (this.anime) {
-        document.title = this.anime.russian + ' смотреть онлайн бесплатно в хорошем качестве - AniSeria'
-      }
     },
     handleScroll () {
       this.comments_render = true

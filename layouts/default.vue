@@ -23,6 +23,9 @@ export default {
     theme () { return this.$nuxt.$store.getters.getTheme }
   },
   watch: {
+    '$route' () {
+      this.$store.commit('setTransparent', false)
+    },
     theme (v) {
       this.changeTheme(v)
     }

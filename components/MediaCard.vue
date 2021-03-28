@@ -75,7 +75,7 @@ export default {
     poster: {
       get () {
         if (this.anime.image) {
-          return this.SHIKIURL + this.anime.image.original
+          return this.SHIKIURL + this.anime.image.preview
         } else {
           return ''
         }

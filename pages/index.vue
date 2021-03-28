@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <Carousel v-if="carousel.length !== 0" :animes="carousel" />
+    <!-- <Carousel v-if="carousel.length !== 0" :animes="carousel" /> -->
     <div class="container">
       <div class="search-landing">
         <MiniList
@@ -16,15 +16,15 @@
 </template>
 
 <script>
-import Carousel from '@/components/Home/Carousel'
+// import Carousel from '@/components/Home/Carousel'
 import MiniList from '@/components/Home/MiniList'
 export default {
   components: {
-    Carousel,
+    // Carousel,
     MiniList
   },
   async fetch ({ store }) {
-    store.commit('setTransparent', true)
+    // store.commit('setTransparent', true)
     if (!store.getters['home/getLists'].map(e => e.title).includes(store.getters['home/getListsParams'][0].title)) {
       await store.dispatch('home/fetchList', store.getters['home/getListsParams'][0])
     }
@@ -35,8 +35,8 @@ export default {
     listsParams () { return this.$store.getters['home/getListsParams'] }
   },
   mounted () {
-    this.$store.dispatch('home/fetchCarousel')
-    this.$store.commit('setTransparent', true)
+    // this.$store.dispatch('home/fetchCarousel')
+    // this.$store.commit('setTransparent', true)
     this.get_lists()
   },
   methods: {
@@ -51,7 +51,7 @@ export default {
 
 <style>
 .search-landing {
-    margin-top: -30px;
+    margin-top: 30px;
     position: relative;
 }
 /* .search-landing .landing-section:nth-child(2n)::after{

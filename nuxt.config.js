@@ -14,7 +14,6 @@ export default {
       { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'icon', sizes:'32x32', type: 'image/x-icon', href: '/icon_32x32.png' },
       { rel: 'icon', sizes:'16x16', type: 'image/x-icon', href: '/icon_16x16.png' },
-      { rel: 'stylesheet',  href: '//fonts.googleapis.com/css?family=Roboto:300,400,500,700,900'},
       { rel: 'canonical',  href: 'https://aniseria.ru/animes'}
     ],
     script: [
@@ -23,8 +22,9 @@ export default {
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'element-ui/lib/theme-chalk/index.css',
-    '@/assets/css/global.css'
+    // 'element-ui/lib/theme-chalk/index.css',
+    '@/assets/css/global.css',
+    '@/assets/css/fonts.css'  
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

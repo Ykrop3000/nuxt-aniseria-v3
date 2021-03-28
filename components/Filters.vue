@@ -2,7 +2,7 @@
   <div class="filters-wrap primary-filters">
     <div v-if="$vssWidth < 1040" class="mobile-filters">
       <div class="search-wrap">
-        <i class="icon fas fa-search icon" />
+        <i class="icon fas fa-search" />
         <input v-model="search" type="search" placeholder="Поиск" class="search">
       </div>
       <div class="open-btn" :class="{'active': mobileFilters}" @click="mobileFilters = !mobileFilters">
@@ -16,7 +16,7 @@
             Поиск
           </div>
           <div class="search-wrap">
-            <i class="fas fa-search" />
+            <i class="icon fas fa-search" />
             <input v-model="search" type="text" class="search">
           </div>
         </div>

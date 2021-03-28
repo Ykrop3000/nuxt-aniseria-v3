@@ -5,7 +5,14 @@
       <i class="fa-bars fas" />
     </div>
     <div class="menu" :class="{'visible':visible,'login':isLoggedIn}">
-      <NuxtLink v-for="i in nav" :key="i.text" :to="i.to" :class="i.auth" class="link">
+      <NuxtLink
+        v-for="i in nav"
+        :key="i.text"
+        no-prefetch
+        :to="i.to"
+        :class="i.auth"
+        class="link"
+      >
         <i :class="i.svg" />
         <span class="label" @click="visible = false" v-text="i.text" />
       </NuxtLink>

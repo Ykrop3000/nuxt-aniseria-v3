@@ -1,23 +1,23 @@
 <template>
-    <div class="landing-section">
-      <NuxtLink :to="{name: 'animes', query:filter.filter}" class="title link">
-        <h3 v-text="sectionName" />
-        <div class="expand">
-          Посмотреть все
-        </div>
-      </NuxtLink>
-
-      <div class="results cover">
-        <MediaCard
-          v-for="i in anime"
-          :key="i.id"
-          :type="type"
-          :anime="i"
-          :view-mode="0"
-          :is-logged-in="isLoggedIn"
-        />
+  <div class="landing-section">
+    <NuxtLink no-prefetch :to="{name: 'animes', query:filter.filter}" class="title link">
+      <h3 v-text="sectionName" />
+      <div class="expand">
+        Посмотреть все
       </div>
+    </NuxtLink>
+
+    <div class="results cover">
+      <MediaCard
+        v-for="i in anime"
+        :key="i.id"
+        :type="type"
+        :anime="i"
+        :view-mode="0"
+        :is-logged-in="isLoggedIn"
+      />
     </div>
+  </div>
 </template>
 <script>
 
@@ -25,7 +25,7 @@ import MediaCard from '@/components/MediaCard'
 
 export default {
   components: {
-    MediaCard,
+    MediaCard
   },
 
   props: {

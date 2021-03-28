@@ -184,6 +184,9 @@ export default {
 .filters-loaded .fs-paceholder,.filters-loaded .f-paceholder{
   display: none;
 }
+.icon{
+    font-size: 1.8rem;
+}
 
 </style>
 
@@ -221,10 +224,6 @@ export default {
     font-weight: 600;
     padding-left: 8px;
     white-space: nowrap;
-}
-
-.icon{
-    font-size: 1.8rem;
 }
 
 </style>

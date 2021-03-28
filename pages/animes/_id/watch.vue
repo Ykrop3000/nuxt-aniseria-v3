@@ -1,6 +1,6 @@
 <template>
   <div class="watch">
-    <div class="select">
+    <!-- <div class="select">
       <h2 class="input-title">
         Плеер
       </h2>
@@ -12,7 +12,7 @@
           :value="val.id"
         />
       </el-select>
-    </div>
+    </div> -->
     <client-only>
       <Player v-if="kodik.link && player == 'kodik'" :url="kodik.link" />
       <Player v-if="vcdn && player == 'vcdn'" :url="vcdn.iframe_src" />

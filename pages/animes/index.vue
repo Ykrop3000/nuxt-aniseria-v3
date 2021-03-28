@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <h1 v-show="$vssWidth>=1040" class="alias-title" v-text="'Список аниме'" />
-    <div v-show="$vssWidth<1040" class="wrap">
-      <div class="mobile-header" v-text="'Список аниме'" />
-    </div>
+    <h1 class="alias-title" v-text="'Список аниме'" />
+    <!-- <div v-show="$vssWidth<1040" class="wrap">
+        <div class="mobile-header" v-text="'Список аниме'" />
+      </div> -->
 
     <div class="f-paceholder" />
     <div class="fs-paceholder" />
@@ -12,6 +12,7 @@
       <Filters />
       <SecondaryFilters />
     </client-only>
+
     <div v-show="status === 'error'" class="not-found">
       Ничего не найдено
     </div>
@@ -51,7 +52,7 @@ export default {
       ViewMode: 0
     }
   },
-  async fetch ({ store, route }) {
+  fetch ({ store, route }) {
     store.commit('setTransparent', false)
     const params = {
       page: 1,
@@ -63,7 +64,7 @@ export default {
       status: route.query.status,
       season: route.query.season
     }
-    await store.dispatch('animes/fetchAnimes', params)
+    return store.dispatch('animes/fetchAnimes', params)
   },
   head () {
     return {
@@ -93,10 +94,8 @@ export default {
     }
   },
   mounted () {
-    this.$store.commit('setTransparent', false)
   },
   methods: {
-
     get_animes (update = false, getPage) {
       let page = 0
 
@@ -179,7 +178,10 @@ export default {
     margin-bottom: 20px;
     margin-top: 20px;
   }
-
+  .alias-title{
+    padding: 25px 20px;
+    display: inline-block;
+  }
 }
 .filters-loaded .fs-paceholder,.filters-loaded .f-paceholder{
   display: none;

@@ -87,11 +87,7 @@ export default {
 .recommendation-card:hover .cover{
     box-shadow: 0 14px 30px rgba(var(--color-shadow-blue),.3),0 4px 4px rgba(var(--color-shadow-blue),.05);
 }
-h2{
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: start;
-}
+
 a:hover {
     color: rgb(var(--color-blue));
 }

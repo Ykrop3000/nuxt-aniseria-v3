@@ -1,8 +1,8 @@
 <template>
   <div id="app" :class="{'pt0':transparent}">
     <client-only>
-      <Header v-show="$vssWidth >= 1040" :transparent="transparent" :is-logged-in="false" />
-      <MobileNav v-show="$vssWidth < 1040" :dark="theme === 'dark'" />
+      <Header v-if="$vssWidth >= 1040" :transparent="transparent" :is-logged-in="false" />
+      <MobileNav v-else :dark="theme === 'dark'" />
     </client-only>
     <div ref="content" class="page-content" @click="linkRouter">
       <Nuxt />
@@ -11,12 +11,11 @@
 </template>
 
 <script>
-import Header from '@/components/Header/Header'
-import MobileNav from '@/components/MobileNav'
+
 export default {
   components: {
-    Header,
-    MobileNav
+    Header: () => import('@/components/Header/Header'),
+    MobileNav: () => import('@/components/MobileNav')
   },
   computed: {
     transparent () { return this.$nuxt.$store.getters.getTransparent },

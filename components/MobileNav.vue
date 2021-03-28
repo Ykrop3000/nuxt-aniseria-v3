@@ -8,7 +8,6 @@
       <NuxtLink
         v-for="i in nav"
         :key="i.text"
-        no-prefetch
         :to="i.to"
         :class="i.auth"
         class="link"

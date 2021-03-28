@@ -11,12 +11,12 @@
     <div class="comment-editor" :class="{'active': open}">
       <div class="wrap">
         <div class="editor">
-          <el-input
+          <!-- <el-input
             v-model="text_comment"
             type="textarea"
             :rows="5"
             placeholder="Write comment"
-          />
+          /> -->
 
           <div class="actions">
             <div class="button cancel" @click="open = false">

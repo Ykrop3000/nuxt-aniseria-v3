@@ -25,8 +25,8 @@
               <img :src="poster" alt="poter" class="cover">
               <div class="actions">
                 <div class="list">
-                  <div class="add" @click="listDilog = true">
-                    Добавить в список
+                  <div class="add" @click="$router.push({name:'animes-id-watch',params:{id:$route.params.id}})">
+                    Смотреть онлайн
                   </div>
                 </div>
                 <div class="favourite" :class="{'isFavourite': anime.favoured}" @click="setfavorite">

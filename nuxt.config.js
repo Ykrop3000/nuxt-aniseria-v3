@@ -14,7 +14,9 @@ export default {
       { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'icon', sizes:'32x32', type: 'image/x-icon', href: '/icon_32x32.png' },
       { rel: 'icon', sizes:'16x16', type: 'image/x-icon', href: '/icon_16x16.png' },
-      { rel: 'canonical',  href: 'https://aniseria.ru/animes'}
+      { rel: 'canonical',  href: 'https://aniseria.ru/animes'},
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap' }
     ],
     script: [
       { src: 'https://kit.fontawesome.com/866e703862.js', crossorigin:'anonymous'}
@@ -24,13 +26,12 @@ export default {
   css: [
     // 'element-ui/lib/theme-chalk/index.css',
     '@/assets/css/global.css',
-    '@/assets/css/fonts.css'  
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '@/plugins/plugins',
-    '@/plugins/element-ui',
+    // '@/plugins/element-ui',
     '@/plugins/click-outside',
     '@/plugins/infinite-scroll',
     '@/plugins/perfect-scrollbar',
@@ -74,9 +75,6 @@ export default {
     }
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    transpile: [/^element-ui/]
-  },
   loading: {
     color: '#29a6ff',
     borderRadius: '0 10px 10px 0',

@@ -4,28 +4,22 @@
       <h2>Описание</h2>
       <div class="description content-wrap" v-html="anime.description_html.replace('https://shikimori.one','')" />
     </div>
-    <render-on-scroll>
+
       <Related v-if="related" :width="$vssWidth" :related="related" :class="{'small':$vssWidth>=1040}" :type="type" />
-    </render-on-scroll>
-    <render-on-scroll>
+
       <Roles v-if="roles" :roles="roles" :title="'Главные герои'" />
-    </render-on-scroll>
-    <render-on-scroll>
+
       <Stats :statuses="anime.rates_statuses_stats" />
-    </render-on-scroll>
-    <render-on-scroll>
+
       <!-- <Screenshots v-if="anime.screenshots" :images="anime.screenshots"/> -->
       <Trailer v-if="trailer" :trailer="trailerl_url" />
-    </render-on-scroll>
-    <render-on-scroll>
+
       <Similar v-if="similar" :similar="similar" :type="type" />
-      <render-on-scroll />
-    </render-on-scroll>
+
   </div>
 </template>
 
 <script>
-import RenderOnScroll from 'nuxt-render-on-scroll'
 const Trailer = () => import('@/components/FullPage/Trailer')
 // const Screenshots = () => import('@/views/FullPage/components/Screenshots')
 const Related = () => import('@/components/FullPage/Related')
@@ -36,7 +30,6 @@ const Stats = () => import('@/components/FullPage/Stats')
 export default {
   name: 'Overview',
   components: {
-    RenderOnScroll,
     Trailer,
     // Screenshots,
     Related,

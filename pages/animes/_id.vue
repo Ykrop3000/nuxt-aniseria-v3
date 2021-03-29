@@ -25,7 +25,7 @@
               <img :src="poster" alt="poter" class="cover">
               <div class="actions">
                 <div class="list">
-                  <div class="add" @click="$router.push({name:'animes-id-watch',params:{id:$route.params.id}})">
+                  <div class="add" @click="watch">
                     Смотреть онлайн
                   </div>
                 </div>
@@ -57,7 +57,7 @@
         </div>
       </div>
     </div>
-    <div class="content container">
+    <div class="content main container">
       <Sidebar :anime="anime" />
       <keep-alive>
         <NuxtChild :anime="anime" :kodik="kodik" :type="$attrs.link" />
@@ -168,6 +168,11 @@ export default {
       //   this.$message.error('Для этого действия тебе необходима регистрация на сайте.')
       // }
     },
+    watch () {
+      if (!this.anime.anons && this.$attrs.type !== 'mangas') {
+        this.$router.push({ name: 'animes-id-watch', params: { id: this.$route.params.id } })
+      }
+    },
     handleScroll () {
       this.comments_render = true
     },
@@ -187,6 +192,9 @@ export default {
 </script>
 
 <style scoped>
+.content.main{
+  padding-bottom: 100px;
+}
 .loading .content .description, .loading .content h1{
     background: rgba(var(--color-background-300),.8);
     box-shadow: none;

@@ -85,7 +85,7 @@ export default {
     return {
       text_comment: '',
       open: false,
-      loading: false
+      loading: true
     }
   },
   computed: {

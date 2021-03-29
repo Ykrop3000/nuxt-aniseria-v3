@@ -24,6 +24,7 @@ export default {
     width: 100%;
 }
 .trailer{
+    margin-bottom: 60px;
     position: relative;
     padding-bottom: 56.2%;
 }

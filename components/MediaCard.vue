@@ -1,6 +1,6 @@
 <template>
   <div class="media-card">
-    <NuxtLink no-prefetch :disabled="!anime.url" :to="anime.url || '/'" class="cover" :class="{'loading':loading}">
+    <NuxtLink :disabled="!anime.url" :to="anime.url || '/'" class="cover" :class="{'loading':loading}">
       <img
         ref="poster"
         v-lazy-load
@@ -29,7 +29,7 @@
     <div v-if="anime.score != '0.0' && !loading" class="rate" :class="rateColor" v-text="anime.score" />
 
     <NuxtLink
-      no-prefetch
+      
       :disabled="!anime.url"
       :to="anime.url || '/'"
       class="title"

@@ -42,115 +42,89 @@ export const actions = {
     commit('setScreenshots', [])
     commit('setComments', [])
   },
-  fetchAnime ({ commit, dispatch }, payload) {
-    return new Promise((resolve, reject) => {
-      dispatch('clearAnime')
-
-      this.$axios({ url: `/api/${payload.type}/${payload.slug}`, method: 'GET' })
-        .then((resp) => {
-          commit('setAnime', resp.data)
-          resolve(resp)
-        })
-        .catch((err) => {
-          reject(err)
-        })
-    })
+  async fetchAnime ({ commit, dispatch }, payload) {
+    dispatch('clearAnime')
+    await this.$axios({ url: `/api/${payload.type}/${payload.slug}`, method: 'GET' })
+      .then((resp) => {
+        commit('setAnime', resp.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   },
-  fetchRelated ({ commit }, params) {
-    return new Promise((resolve, reject) => {
-      this.$axios({ url: `/api/${params.type}/${params.id}/related`, method: 'GET' })
-        .then((resp) => {
-          commit('setRelated', resp.data)
-          resolve(resp)
-        })
-        .catch((err) => {
-          reject(err)
-        })
-    })
+  async fetchRelated ({ commit }, params) {
+    await this.$axios({ url: `/api/${params.type}/${params.id}/related`, method: 'GET' })
+      .then((resp) => {
+        commit('setRelated', resp.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   },
-  fetchSimilar ({ commit }, params) {
-    return new Promise((resolve, reject) => {
-      this.$axios({ url: `/api/${params.type}/${params.id}/similar`, method: 'GET' })
-        .then((resp) => {
-          commit('setSimilar', resp.data)
-          resolve(resp)
-        })
-        .catch((err) => {
-          reject(err)
-        })
-    })
+  async fetchSimilar ({ commit }, params) {
+    await this.$axios({ url: `/api/${params.type}/${params.id}/similar`, method: 'GET' })
+      .then((resp) => {
+        commit('setSimilar', resp.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   },
-  fetchRoles ({ commit }, params) {
-    return new Promise((resolve, reject) => {
-      this.$axios({ url: `/api/${params.type}/${params.id}/roles`, method: 'GET' })
-        .then((resp) => {
-          commit('setRoles', resp.data.filter(d => d.character != null))
-          resolve(resp)
-        })
-        .catch((err) => {
-          reject(err)
-        })
-    })
+  async fetchRoles ({ commit }, params) {
+    await this.$axios({ url: `/api/${params.type}/${params.id}/roles`, method: 'GET' })
+      .then((resp) => {
+        commit('setRoles', resp.data.filter(d => d.character != null))
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   },
-  fetchKodik ({ commit }, payload) {
-    return new Promise((resolve, reject) => {
-      this.$axios({ url: kodikUrl, params: { token: kodikKey, shikimori_id: payload }, method: 'GET', headers: {} })
-        .then((resp) => {
-          commit('setKodik', resp.data.results[0])
-          resolve(resp)
-        })
-        .catch((err) => {
-          reject(err)
-        })
-    })
+  async fetchKodik ({ commit }, payload) {
+    await this.$axios({ url: kodikUrl, params: { token: kodikKey, shikimori_id: payload }, method: 'GET', headers: {} })
+      .then((resp) => {
+        commit('setKodik', resp.data.results[0])
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   },
-  fetchVcdn ({ commit }, payload) {
-    return new Promise((resolve, reject) => {
-      this.$axios({ url: vcdnUrl, params: { api_token: vcdnKey, kinopoisk_id: payload }, method: 'GET', headers: {} })
-        .then((resp) => {
-          commit('setVcdn', resp.data.data[0])
-          resolve(resp)
-        })
-        .catch((err) => {
-          reject(err)
-        })
-    })
+  async fetchVcdn ({ commit }, payload) {
+    await this.$axios({ url: vcdnUrl, params: { api_token: vcdnKey, kinopoisk_id: payload }, method: 'GET', headers: {} })
+      .then((resp) => {
+        commit('setVcdn', resp.data.data[0])
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   },
-  fetchScreenshots ({ commit }, payload) {
-    return new Promise((resolve, reject) => {
-      this.$axios({ url: `/api/animes/${payload}/screenshots`, method: 'GET' })
-        .then((resp) => {
-          commit('setScreenshots', resp.data)
-          resolve(resp)
-        })
-        .catch((err) => {
-          reject(err)
-        })
-    })
+  async fetchScreenshots ({ commit }, payload) {
+    await this.$axios({ url: `/api/animes/${payload}/screenshots`, method: 'GET' })
+      .then((resp) => {
+        commit('setScreenshots', resp.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   },
-  fetchComments ({ commit, state }, props) {
-    return new Promise((resolve, reject) => {
-      const params = {
-        commentable_id: props.id,
-        commentable_type: 'Topic',
-        limit: 10,
-        page: props.page,
-        desc: 1
-      }
-      this.$axios({ url: '/api/comments', params, method: 'GET' })
-        .then((resp) => {
-          if (props.page === 0) {
-            commit('setComments', resp.data)
-          } else {
-            commit('addComments', resp.data)
-          }
-
-          resolve(resp)
-        })
-        .catch((err) => {
-          reject(err)
-        })
-    })
+  async fetchComments ({ commit, state }, props) {
+    const params = {
+      commentable_id: props.id,
+      commentable_type: 'Topic',
+      limit: 10,
+      page: props.page,
+      desc: 1
+    }
+    await this.$axios({ url: '/api/comments', params, method: 'GET' })
+      .then((resp) => {
+        if (props.page === 0) {
+          commit('setComments', resp.data)
+        } else {
+          commit('addComments', resp.data)
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   },
   async fetchBanner ({ commit }, search) {
     const clientApollo = this.app.apolloProvider.defaultClient

@@ -65,7 +65,7 @@
     </div>
 
     <client-only>
-      <Comments v-if="comments_render && anime.topic_id" :id="anime.topic_id" :render="comments_render" :is-logged-in="isLoggedIn" />
+      <!-- <Comments v-if="comments_render && anime.topic_id" :id="anime.topic_id" :render="comments_render" :is-logged-in="isLoggedIn" /> -->
     </client-only>
   </div>
 </template>
@@ -74,13 +74,13 @@
 
 import Sidebar from '@/components/FullPage/Sidebar'
 
-const Comments = () => import('@/components/FullPage/Comments.vue')
+// const Comments = () => import('@/components/FullPage/Comments.vue')
 // const SetRates = () => import('@/components/SetRates.vue')
 
 export default {
   name: 'Single',
   components: {
-    Comments,
+    // Comments,
     // SetRates,
     Sidebar
   },

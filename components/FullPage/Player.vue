@@ -6,9 +6,9 @@
 <script>
 export default {
   props: {
-    url:{
+    url: {
       type: String,
-      default(){
+      default () {
         return ''
       }
     }
@@ -25,6 +25,7 @@ export default {
 .trailer{
     position: relative;
     padding-bottom: 56%;
+    background-color: rgb(var(--color-background-100));
 }
 .trailer>iframe{
     position: absolute;

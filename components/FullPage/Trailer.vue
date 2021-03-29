@@ -27,6 +27,7 @@ export default {
     margin-bottom: 60px;
     position: relative;
     padding-bottom: 56.2%;
+    background-color: rgb(var(--color-background-100));
 }
 .trailer>iframe{
     position: absolute;

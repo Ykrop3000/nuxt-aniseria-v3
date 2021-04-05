@@ -10,7 +10,7 @@ export default {
     trailer: {
       type: String,
       default () {
-        return ''
+        return '' 
       }
     }
   }
